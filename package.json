@@ -1,0 +1,17 @@
+{
+  "name": "budo-to-gh-pages",
+  "version": "1.0.0",
+  "description": "Publish budo prototypes to gh-pages in one command",
+  "main": "index.js",
+  "bin": {
+    "budo-to-gh-pages": "index.js"
+  },
+  "author": "msfeldstein@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "browserify": "^16.2.3",
+    "fs-extra": "^7.0.1",
+    "gh-pages": "^2.0.1",
+    "simple-html-index": "^1.5.0"
+  }
+}
