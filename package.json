@@ -6,6 +6,7 @@
   "bin": {
     "budo-to-gh-pages": "index.js"
   },
+  "repository": "github:msfeldstein/budo-to-gh-pages",
   "author": "msfeldstein@gmail.com",
   "license": "MIT",
   "dependencies": {
