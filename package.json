@@ -13,6 +13,7 @@
     "browserify": "^16.2.3",
     "fs-extra": "^7.0.1",
     "gh-pages": "^2.0.1",
+    "remote-origin-url": "^2.0.0",
     "simple-html-index": "^1.5.0"
   }
 }

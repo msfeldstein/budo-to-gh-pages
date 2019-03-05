@@ -5,7 +5,9 @@ const path = require('path')
 const browserify = require('browserify')
 const ghpages = require('gh-pages')
 const html = require('simple-html-index')
-const { promisify } = require('util');
+const { promisify } = require('util')
+const origin = require('remote-origin-url')
+const parseGH = require('./github-url-parser')
 
 const publishDir = './publish-to-github'
 
@@ -49,7 +51,10 @@ async function publish() {
   const publish = promisify(ghpages.publish)
   console.log("Publishing to github")
   await publish(publishDir)
-  console.log("Success!")
+  const repo = await origin()
+  const gh = parseGH(repo)
+
+  console.log("Success!", `https://${gh.username}.github.io/${gh.project}`)
 
   // Cleanup artifacts
   fs.removeSync(publishDir)
