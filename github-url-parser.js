@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = function(url) {
   if (url.indexOf('git@') == 0) {
     const path = url.split(':')[1]
