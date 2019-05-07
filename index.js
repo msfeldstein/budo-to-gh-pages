@@ -47,6 +47,14 @@ async function publish() {
     const htmlOut = fs.createWriteStream(indexPath)
     await awaitablePipe(htmlStream, htmlOut)
   }
+  const assetDirectories = ['public', 'assets', 'images', 'static']
+  assetDirectories.forEach(dir => {
+    if (fs.pathExistsSync(dir)) {
+      console.log("Copying asset path:", dir)
+      fs.copySync(dir, path.join(publishDir, dir))
+    }
+  })
+  
 
   const publish = promisify(ghpages.publish)
   console.log("Publishing to github")
